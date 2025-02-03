@@ -1,0 +1,16 @@
+@startuml Sequenzdiagramm
+actor User
+participant "Presentation Layer" as UI
+participant "Logic Layer" as Logic
+participant "Persistence Layer" as Persistence
+database "SQLite Database" as DB
+
+User -> UI : Enters command (e.g., add game)
+UI -> Logic : Sends request
+Logic -> Persistence : Requests data
+Persistence -> DB : Queries database
+DB --> Persistence : Returns data
+Persistence --> Logic : Returns data
+Logic --> UI : Returns result
+UI --> User : Displays result
+@enduml

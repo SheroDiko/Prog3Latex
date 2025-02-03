@@ -1,0 +1,18 @@
+\begin{thebibliography}{{Ora}}
+
+\bibitem[{ Ap}]{Maven}
+{ Apache Software Foundation}.
+\newblock Apache maven.
+\newblock \url{https://maven.apache.org/}.
+
+\bibitem[{luk}]{JOOQ}
+{lukaseder}.
+\newblock Why you should use jooq with code generation.
+\newblock \url{https://blog.jooq.org/why-you-should-use-jooq-with-code-generation/}.
+
+\bibitem[{Ora}]{Java}
+{Oracle}.
+\newblock Java se 17 archive downloads.
+\newblock \url{https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html}.
+
+\end{thebibliography}

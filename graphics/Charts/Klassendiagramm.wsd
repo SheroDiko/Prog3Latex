@@ -1,0 +1,61 @@
+@startuml Klassendiagramm
+
+class Person {
+    - int id
+    - String name
+    - String password
+    - String address
+    - int phoneNo
+    + void printInfo()
+}
+
+class User {
+    + void printInfo()
+    + void printOwnedGames()
+    + void updateUserInfo()
+    + void purchaseGame(Game game)
+    + void removeGame(Game game)
+}
+
+class Staff {
+    # double salary
+    + void printInfo()
+}
+
+class Game {
+    - int gameID
+    - String title
+    - String developer
+    - String genre
+    - double price
+    - boolean available
+    + void printInfo()
+    + void updateGameInfo()
+    + void addToLibrary(User user)
+    + void removeFromLibrary(User user)
+    + void printGameDetails()
+}
+
+class Transaction {
+    - Date purchaseDate
+    - double amount
+    + void printTransaction()
+}
+
+class Subscription {
+    - Date startDate
+    - Date endDate
+    - double cost
+    + void renewSubscription()
+    + void cancelSubscription()
+}
+
+Person <|-- User : is
+Person <|-- Staff
+
+
+User "1" -- "*" Transaction : makes
+User "1" -- "*" Subscription : subscribes
+Transaction "*" --> "1" Game : purchases
+
+@enduml

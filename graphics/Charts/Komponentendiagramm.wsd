@@ -1,0 +1,15 @@
+@startuml Komponentendiagramm
+package "Game Library Manager" {
+    component "Presentation Layer" as UI
+    component "Logic Layer" as Logic
+    component "Persistence Layer" as Persistence
+}
+
+UI --> Logic : Uses
+Logic --> Persistence : Uses
+
+note right of UI : Text-based User Interface (CLI/TUI)
+note right of Logic : Business Logic (Game Management)
+note right of Persistence : SQLite Database with jOOQ
+
+@enduml

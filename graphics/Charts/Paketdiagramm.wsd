@@ -1,0 +1,24 @@
+@startuml GameLibraryManager
+package "Game Library Manager" {
+    package "Presentation" {
+        [CLI Interface]
+        [TUI Interface]
+    }
+    package "Logic" {
+        [Game Management]
+        [User Management]
+        [Statistics Tracking]
+    }
+    package "Persistence" {
+        [Database Access]
+        [jOOQ Abstraction]
+    }
+}
+
+[Presentation] --> [Logic] : Uses
+[Logic] --> [Persistence] : Uses
+
+note right of [Presentation] : Handles user interaction
+note right of [Logic] : Contains business logic
+note right of [Persistence] : Manages data storage
+@enduml

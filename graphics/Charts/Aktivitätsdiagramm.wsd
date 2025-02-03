@@ -1,0 +1,16 @@
+@startuml Aktivitätsdiagramm
+start
+:User opens application;
+if (User wants to add a game?) then (yes)
+    :Add game to library;
+else if (User wants to search for a game?) then (yes)
+    :Search for game by title, genre, or platform;
+else if (User wants to borrow a game?) then (yes)
+    :Borrow game;
+else if (User wants to return a game?) then (yes)
+    :Return game;
+else (no)
+    :Exit application;
+endif
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml Verteilungsdiagramm
+artifact "GameLibraryManager.jar" as App
+node "User's Computer" as UserPC {
+    component "Presentation Layer" as UI
+    component "Logic Layer" as Logic
+    component "Persistence Layer" as Persistence
+    database "SQLite Database" as DB
+}
+
+UI --> Logic : Communicates
+Logic --> Persistence : Communicates
+Persistence --> DB : Reads/Writes
+
+note right of UserPC : The application runs locally on the user's computer.
+@enduml
